@@ -25,12 +25,9 @@
 * Registro e Login retornando JWT.
 * Middleware de proteção para rotas de pedidos.
 
-
 2. **Gestão de Pedidos:**
 * **POST /orders:** Criação do pedido. Padrão: `state: CREATED`, `status: ACTIVE`.
 * **GET /orders:** Listagem com paginação e filtro por `state`.
-
-
 
 ---
 
