@@ -48,6 +48,6 @@ const OrderSchema: Schema = new Schema({
             message: 'O pedido deve ter pelo menos um serviço e o valor total deve ser maior que zero.'
         }
     }
-}, {timestamps: true})
+}, { timestamps: true })
 
 export default mongoose.model<IOrder>('Order', OrderSchema);
