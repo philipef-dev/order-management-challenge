@@ -17,16 +17,16 @@ const UserSchema: Schema = new Schema({
     password: {
         type: String,
         required: true,
-        select: false /*Isso impede que a senha vaze em buscas comuns (segurança!) */
+        select: false
     },
 }, { timestamps: true })
 
-UserSchema.pre<IUser>('save', async function(next) {
-    if(!this.isModified('password')) return;
+UserSchema.pre<IUser>('save', async function () {
+    if (!this.isModified('password')) return;
     this.password = await bcrypt.hash(this.password, 8);
 });
 
-UserSchema.methods.comparePassword = function(password: string){
+UserSchema.methods.comparePassword = function (password: string) {
     return bcrypt.compare(password, this.password);
 };
 

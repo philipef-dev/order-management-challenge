@@ -9,7 +9,10 @@ routes.post('/register', AuthController.register);
 routes.post('/login', AuthController.login);
 
 routes.use(authMiddleware);
+
 routes.post('/orders', OrderController.createOrder);
 routes.get('/orders', OrderController.listOrders);
+
+routes.patch('/orders/:id/advance', OrderController.advanceOrder);
 
 export default routes;
